@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Game Form</h1>
+<div mat-dialog-content>
+    <form [formGroup]="gameForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Player #1, ID</mat-label>
+            <input formControlName="player1ID" matInput placeholder="ID">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Player 2, ID</mat-label>
+            <input formControlName="player2ID" matInput placeholder="ID">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Game time</mat-label>
+            <input formControlName="gameTime" matInput placeholder="time">
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button style="font-size: 25px;" mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 15px; font-size: 25px;" mat-raised-button color="primary" (click)="addAndEditGame()">{{actionBtn}}</button>
+</div>

@@ -1,0 +1,17 @@
+h1 {
+    color: #3f51b5;
+    font-size: 30px;
+    font-weight: 500;
+    width: 100%;
+}
+
+p {
+    color: red;
+    font-size: 25px;
+    background-color: rgba(203, 46, 129, 0.1);
+    height: 40px;
+    display: table-cell;
+    vertical-align: middle;
+    width: 420px;
+}
+

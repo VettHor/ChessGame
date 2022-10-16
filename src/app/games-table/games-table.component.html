@@ -1,0 +1,61 @@
+<div class="mat-elevation-z8">
+  <div style="display: flex; justify-content: center;">
+    <button style="margin-left: 30px; font-family: 'Times New Roman', Times, serif;" 
+      class="btn-delete"
+      (click)="onAddGame()">
+      <mat-icon style="color: green; transform: scale(2);">add</mat-icon>
+      Add new game
+    </button>
+  </div>
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="player1ID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Player1 ID</th>
+      <td mat-cell *matCellDef="let row">{{row.player1ID}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="player2ID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Player2 ID</th>
+      <td mat-cell *matCellDef="let row">{{row.player2ID}}</td>
+    </ng-container>
+
+            <!-- Name Column -->
+    <ng-container matColumnDef="gameTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Game time</th>
+      <td mat-cell *matCellDef="let row">{{row.gameTime}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="editAndDeleteGame">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let row">
+        <button class="btn-delete" (click)="onEditGame(row)">
+          <mat-icon style="color: #3f51b5; transform: scale(1.5);">edit</mat-icon>
+        </button>
+        <button style="margin-left: 30px;" class="btn-delete" (click)="onDeleteGame(row.id)">
+          <mat-icon style="color: red; transform: scale(1.5);">delete</mat-icon>
+        </button>
+        <button style="margin-left: 30px;" class="btn-delete" (click)="onGetById(row.id)">
+          <mat-icon style="color: green; transform: scale(1.5);">remove_red_eye</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>

@@ -1,0 +1,15 @@
+<h1 mat-dialog-title class="text-center">Game information</h1>
+<div mat-dialog-content>
+    <h1>ID</h1>
+    <p ngDefaultControl [(ngModel)]="id">{{id}}</p>
+    <h1>Player #1, ID</h1>
+    <p ngDefaultControl [(ngModel)]="player1ID">{{player1ID}}</p>
+    <h1>Player #2, ID</h1>
+    <p ngDefaultControl [(ngModel)]="player2ID">{{player2ID}}</p>
+    <h1>Game time</h1>
+    <p ngDefaultControl [(ngModel)]="gameTime">{{gameTime}}</p>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button style="font-size: 25px;" mat-raised-button color="primary" mat-dialog-close>OK</button>
+</div>

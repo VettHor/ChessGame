@@ -1,0 +1,17 @@
+<h1 mat-dialog-title class="text-center">Player information</h1>
+<div mat-dialog-content>
+    <h1>ID</h1>
+    <p ngDefaultControl [(ngModel)]="id">{{id}}</p>
+    <h1>Name</h1>
+    <p ngDefaultControl [(ngModel)]="name">{{name}}</p>
+    <h1>Email</h1>
+    <p ngDefaultControl [(ngModel)]="email">{{email}}</p>
+    <h1>Password</h1>
+    <p ngDefaultControl [(ngModel)]="password">{{password}}</p>
+    <h1>Level</h1>
+    <p ngDefaultControl [(ngModel)]="level">{{level}}</p>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button style="font-size: 25px;" mat-raised-button color="primary" mat-dialog-close>OK</button>
+</div>

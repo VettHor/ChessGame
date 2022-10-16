@@ -1,0 +1,33 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: rgb(203, 46, 129);
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  color: white;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+a {
+  font-family:'Times New Roman', Times, serif;
+  font-size: 28px !important;
+  color: rgb(224, 223, 223) !important;
+}
+
+a:hover {
+  color: #3f51b5 !important;
+}
+
