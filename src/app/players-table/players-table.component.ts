@@ -35,15 +35,7 @@ export class PlayersTableComponent implements AfterViewInit {
   getAllPlayers() {
     this.httpClient.get<PlayersTableItem[]>('https://localhost:44385/api/User/get_players').subscribe(
       response => {
-        this.dataSource = new PlayersTableDataSource(response.map(player => {
-          return { 
-            id: player.id, 
-            name: player.name, 
-            email: player.email, 
-            password: player.password,
-            level: player.level
-          };
-        }));
+        this.dataSource = new PlayersTableDataSource(response);
         this.table.dataSource = this.dataSource;
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;

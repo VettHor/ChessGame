@@ -35,14 +35,7 @@ export class GamesTableComponent implements AfterViewInit {
   getAllGames() {
     this.httpClient.get<GamesTableItem[]>('https://localhost:44385/api/Game/get_games').subscribe(
       response => {
-        this.dataSource = new GamesTableDataSource(response.map(game => {
-          return { 
-            id: game.id, 
-            player1ID: game.player1ID, 
-            player2ID: game.player2ID, 
-            gameTime:game.gameTime
-          };
-        }));
+        this.dataSource = new GamesTableDataSource(response);
         this.table.dataSource = this.dataSource;
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
