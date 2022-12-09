@@ -1,0 +1,52 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="copyAmount">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Copy amount</th>
+      <td mat-cell *matCellDef="let row">{{row.copyAmount}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+      <td mat-cell *matCellDef="let row">
+        <button class="btn-delete" (click)="onEditBook(row)">
+          <mat-icon style="color: green; transform: scale(1.5);">get_app</mat-icon>
+        </button>
+        <button style="margin-left: 30px;" class="btn-delete" (click)="onDeleteBook(row.id)">
+          <mat-icon style="color: red; transform: scale(1.5);">keyboard_return</mat-icon>
+        </button>
+        <button style="margin-left: 30px;" class="btn-delete" (click)="onDeleteBook(row.id)">
+          <mat-icon style="color: red; transform: scale(1.5);">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <div style="display: flex; justify-content: center; background-color: rgb(18, 67, 25);">
+    <button style="width: 100%; color: white;"
+      class="btn-delete"
+      (click)="onAddBook()">
+      Add book
+    </button>
+  </div>
+
+  <mat-paginator #paginator
+      [length]="dataSource.data.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>
